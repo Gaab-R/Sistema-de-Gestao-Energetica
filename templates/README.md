@@ -1,81 +1,42 @@
-# 🌐 Templates
+# Templates
 
-Este diretório contém os arquivos de interface HTML do sistema SAPEX, responsáveis pela renderização das páginas no navegador utilizando o mecanismo de templates do Flask (Jinja2).
+Arquivos de interface HTML do sistema SAPEX.
 
----
-
-## 📄 Arquivos
-
-
-index.html   # Página principal do sistema (dashboard)
-
+Responsáveis pela renderização das páginas no navegador usando Flask (Jinja2).
 
 ---
 
-## 🧠 Descrição
+## Estrutura
 
-O arquivo index.html é responsável por:
-
-- Exibir o dashboard de monitoramento energético
-- Mostrar dados em tempo real dos sensores simulados
-- Apresentar análises e recomendações do sistema
-- Renderizar gráficos de consumo energético
-- Integrar dados dinâmicos do backend (Flask)
+- index.html → dashboard principal do sistema  
 
 ---
 
-## 🔗 Integração com o backend
+## O que faz
 
-Os dados são enviados pelo Flask através da função render_template:
+O template principal:
 
+- Exibe o dashboard de monitoramento  
+- Mostra dados dos sensores  
+- Apresenta análises e recomendações  
+- Renderiza gráficos de consumo  
+- Integra dados vindos do backend  
 
-ultimo_dado
-ultimo_dado_json
-consumo_atual
-valor_janeiro
-emissoes_co2
-analise_ia
-acao
+---
 
+## Integração com o backend
 
-Esses dados são utilizados no HTML via Jinja2:
+Os dados são enviados pelo Flask via `render_template`:
 
+- ultimo_dado  
+- ultimo_dado_json  
+- consumo_atual  
+- valor_janeiro  
+- emissoes_co2  
+- analise_ia  
+- acao  
 
+No HTML:
+
+```html
 {{ variavel }}
-
-
-E no JavaScript através de atributos do HTML:
-
-
-data-ultimo-dado
-
-
----
-
-## 🎨 Funcionalidades da interface
-
-- Dashboard com indicadores de consumo
-- Cards dinâmicos com status (eficiente, alto, etc.)
-- Gráfico de comparação mensal (Chart.js)
-- Navegação lateral interativa
-- Seções:
-  - Dashboard
-  - Status
-  - Relatórios
-
----
-
-## ⚠️ Observações
-
-- O template depende do Flask para renderização correta
-- Os dados são atualizados conforme o backend processa novas informações
-- A interface utiliza arquivos da pasta static/ (CSS e JavaScript)
-
----
-
-## 🚀 Possíveis melhorias
-
-- Responsividade para dispositivos móveis
-- Novos gráficos (linha, pizza, etc.)
-- Integração com APIs externas
-- Interface com múltiplos usuários
